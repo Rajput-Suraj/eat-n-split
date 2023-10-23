@@ -1,3 +1,5 @@
+import Button from './Button';
+
 function Friend({ friend }) {
   const { id, name, image, balance } = friend;
   return (
@@ -19,7 +21,7 @@ function Friend({ friend }) {
 
       {balance === 0 && <p>You and {name} are even</p>}
 
-      <button className="button">Select</button>
+      <Button>Select</Button>
     </li>
   );
 }
