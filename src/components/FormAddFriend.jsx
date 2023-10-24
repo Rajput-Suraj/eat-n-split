@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Button from './Button';
 
-function FormAddFriend() {
+function FormAddFriend({ onAddFriend }) {
   const [name, setName] = useState('');
   const [image, setImage] = useState('https://i.pravatar.cc/48');
 
@@ -20,7 +20,7 @@ function FormAddFriend() {
       id: ID,
     };
 
-    console.log(newFriend);
+    onAddFriend(newFriend);
 
     setName('');
     setImage('https://i.pravatar.cc/48');
