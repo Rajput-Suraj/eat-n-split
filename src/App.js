@@ -8,22 +8,16 @@ import FormSplitBill from './components/FormSplitBill';
 function App() {
   const [show, setShow] = useState(false);
 
+  function handleShowAddFriend() {
+    setShow((show) => !show);
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
         <FriendsList />
-        {show ? (
-          <>
-            <FormAddFriend />
-          </>
-        ) : (
-          <></>
-        )}
-        {show ? (
-          <Button onToggle={() => setShow(!show)}>Close</Button>
-        ) : (
-          <Button onToggle={() => setShow(!show)}>Add friend</Button>
-        )}
+        {show && <FormAddFriend />}
+        <Button onToggle={handleShowAddFriend}>{show ? 'Close' : 'Add friend'}</Button>
       </div>
       <FormSplitBill />
     </div>
