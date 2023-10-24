@@ -1,5 +1,9 @@
-function Button({ children }) {
-  return <button className="button">{children}</button>;
+function Button({ children, onToggle }) {
+  return (
+    <button className="button" onClick={onToggle}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;
